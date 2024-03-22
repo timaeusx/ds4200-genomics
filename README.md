@@ -1,2 +1,1 @@
-# ds4200-genomics
-change repo name to be more descriptive later
+# ds4200-los-angeles-crime
