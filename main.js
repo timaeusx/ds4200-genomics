@@ -99,7 +99,7 @@ crime.then(function(data) {
   svg.append("text")
     .attr("transform", `translate(${margin.left / 5},${height / 2})rotate(-90)`)
     .style("text-anchor", "middle")
-    .text("Neighbourhoods of LA");
+    .text("Police Departments of LA");
     
   });
 
