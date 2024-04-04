@@ -11,3 +11,13 @@ html {
 #vis.vega-embed details summary {
   position: relative;
 }
+
+#vis2.vega-embed {
+  width: 100%;
+  display: flex;
+}
+
+#vis2.vega-embed details,
+#vis2.vega-embed details summary {
+  position: relative;
+}
