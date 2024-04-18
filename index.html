@@ -11,40 +11,37 @@
   </head>
   <body>
     <h1>Crime in Los Angeles Since 2020</h1>
-    <p style="text-align: center">Yi Chen Wu, Matthew Xue, Fred Wang, Timothy Wang</p>
+    <p style="text-align: center">Yi Chen Wu, Matthew Xue, Fred Wang, Tim Wang</p>
 
     <h2>Introduction</h2>
-    <p>Los Angeles is the second most populous city in the United States, contributing about a quarter of California's GDP and approximately four percent of the USA's GDP. However, the downside of being such a large city is the higher incidence of crime. We find it intriguing to analyze LA crime data from 2020 to 2024 to gain insights into various topics such as crime trends, patterns, and demographics within the city. We deem this topic significant because it can inform crime prevention strategies and policy making.</p>
+    <p>Los Angeles is the second most populous city in the United States, contributing about a quarter of California's GDP and approximately four percent of the USA's GDP. However, the downside of being such a large city is the higher incidence of crime. We find it intriguing to analyze LA crime data from 2020 to 2023 to gain insights into various topics such as crime trends, patterns, and demographics within the city. We deem this topic significant because it can inform crime prevention strategies and policy making.</p>
 
-    <p>Analyzing crime data facilitates the identification of trends and emerging patterns, aiding proactive crime prevention efforts. This may involve implementing targeted interventions like neighborhood watch programs, youth outreach initiatives, and community engagement activities. Moreover, crime data analysis provides policymakers with evidence-based insights to develop policies and programs aimed at reducing crime rates and addressing the root causes of criminal behavior. Such initiatives may encompass community policing, crime prevention, education, and social services.</p>
+    <p>Analyzing crime data facilitates the identification of trends and emerging patterns, aiding proactive crime prevention efforts. This may involve implementing targeted intervention programs like neighborhood watches, youth outreach initiatives, and community engagement activities. Moreover, crime data analysis provides policymakers with evidence-based insights to develop policies and programs aimed at reducing crime rates and addressing the root causes of criminal behavior. Such initiatives may encompass community policing, crime prevention, education, and social services.</p>
         
-    <p>We believe that through trend analysis, geospatial analysis, and examination of crime occurrences at different times of the day, we can gain a comprehensive understanding of crime progression in LA.
-</p>
-    <p>For further reading on crime statistics and perceptions in Los Angeles, visit the following links:</p>
-    <ul>
-        <li><a href="https://abc7.com/feature/los-angeles-safety-tracker-crime-stats-how-safe-is-my-neighborhood-zip-code-statistics/12533677/" target="_blank">Los Angeles Safety Tracker: Crime Stats</a></li>
-        <li><a href="https://www.latimes.com/california/story/2023-10-12/violent-crime-is-down-fear-is-up-why-is-la-perceived-as-dangerous" target="_blank">Violent Crime is Down, Fear is Up: Why is LA Perceived as Dangerous?</a></li>
-    </ul>
+    <p>We believe that through trend analysis, geospatial analysis, and examination of crime occurrences at different times of the day, we can gain a comprehensive understanding of crime incidents in LA.</p>
+
     <h2>Data Overview</h2>
     <p>
-      Our dataset contains information about crimes occurring in Los Angeles. It includes relevant details for each crime, such as the date reported, date occurred, time occurred, area name, victim's age, sex, weapon used, and location. The data was sourced from Data.gov, 
-      a reliable and reputable platform, and is regularly updated by the LAPD. We utilized the Pandas library to load the data, which comprises 28 attributes, including a mix of geospatial, categorical, and continuous data. With 769,354 observations spanning from 2020 to 2024, our dataset provides ample data for generating the visualizations we aim to create. The dataset uses about 182 MB of memory.
+      Our dataset contains information about crime incidents occurring in Los Angeles. It includes relevant details for each crime, such as the date reported, date occurred, time occurred, area name, victim's age, sex, weapon used, and location. The data was sourced from Data.gov, 
+      a reliable and reputable platform, and is regularly updated by the LAPD. We utilized the Pandas library to load the data, which comprises 28 attributes, including a mix of geospatial, categorical, and continuous data. With 769,354 observations spanning from 2020 to 2023, our dataset provides ample data for generating the visualizations we aim to create. The dataset uses about 182 MB of memory.
     </p>
 
     
     <h2>Map Overview</h2>
-    <p>The following map is a demo interactive map for display purposes please visit the following link for the full experience</p>
-    <a href="https://660ef5cd9a35f53c4675f664--soft-toffee-94dc22.netlify.app/" target="_blank">Click here for the full map</a>
+    <p>We can visualize theft crimes geographically using an interactive map. The map below shows thefts in Los Angeles neighborhoods in 2020, for demonstration purposes. To see thefts across all years (2020-2023), 
+    <a href="https://660ef5cd9a35f53c4675f664--soft-toffee-94dc22.netlify.app/" target="_blank">please click here</a>.</p>
 
     <embed type="text/html" src="LA_Crime_Map.html", width=100%, height=400>
-    <p> This interactive map focuses on the theft crime in LA from 2020 to 2023. There are 5 layers for user to interact.the 
-      first layer shows the overall count of theft data over the 4 years per region. Rest of the 4 layers corresponds to the four years from 2020-2023 crime data.
-      As the result demonstrates, we can see that theft crime activity most often happens around downtown LA. 
-      We can also observe that there are regions that have no theft crime, this could be due to a lack of data collection from those areas, where data are mainly collected around downtown and central areas in LA.  </p>
+    <p> There are five layers that can be explored. The 
+      first layer shows overall counts of theft data over the time period in each location. The remaining four layers show crimes over each of the years 2020 to 2023.
+      We can see that theft crime activity most often happens around Downtown Los Angeles. 
+      We can also observe that there are areas that have little to no thefts. This could be due to a lack of reporting in those areas, for instance.  </p>
+
     <h2>Monthly Crime Type Trends</h2>
     <p>The frequencies of different kinds of crimes may have seasonal trends.
-        Here we visualize the monthly counts of the top ten most reported types of incidents.
-        To filter by incident type, use the dropdown menu below.
+      Here we can use a line chart to visualize the monthly counts of the top ten most reported types of incidents.
+      This helps surface clear trends over time across different types of incidents.
+      To filter by incident type, use the dropdown menu below.
     </p>
     <div id="vis"></div>
     <script>
@@ -99,13 +96,13 @@
     
       </script>
 
-    <h2>Crime Incidents Reported by each Police Station in LA </h2>
+    <h2>Crime Incidents Reported by Police Stations </h2>
     <svg id="plot"></svg>
     <script src='https://d3js.org/d3.v7.min.js'></script>
     <script src='main.js'></script>
 
     <p>
-      The D3 plot is a horizontal bar chart designed to visualize the number of crime incidents reported from 2020 to the present in each of LA's police stations. Due to the large size of the original dataset, only a sample representing 5% of the data was utilized for visualization. This sample was extracted using Python's random sampling method.
+      We can use a horizontal bar chart to visualize the number of crime incidents reported from 2020 to 2023 by individual police stations. Due to the large size of the original dataset, a representative sample representing 5% of the data was utilized for visualization. This sample was extracted using Python's random sampling method.
       <br>
       Each police station in Los Angeles is responsible for handling crimes that occur within its jurisdiction. Therefore, the number of reported incidents per station serves as a significant indicator of the level of crime present in that particular area.
       <br>
@@ -115,25 +112,32 @@
           The majority of police stations, specifically 20 out of the 21 counties, reported crime incidents exceeding 2,000. This indicates a widespread occurrence of crime across various areas of Los Angeles.
         </li>
         <li>
-          Among the police stations, the 77th street station stands out with the highest number of reported incidents, surpassing 10,000. On the other hand, Rampart station reported the lowest number of incidents, with fewer than 2,000 recorded.
+          The 77th Street Community Police Station stands out with the highest number of reported incidents, surpassing 10,000. On the other hand, the Rampart Community Police Station reported the lowest number of incidents, with fewer than 2,000 recorded.
         </li>
       </ul>
       Overall, this visualization serves to highlight the varying levels of crime across different regions of Los Angeles, providing valuable insights for law enforcement and policymakers to address crime prevention strategies effectively.
     </p>
+
+    <h2>Types of Incidents</h2>
+    <p>We can visualize the kinds of locations at which incidents are occurring using a word cloud of the incident report descriptions. The size of each phrase is determined by the frequency that the phrase appears across all incident reports.</p>
+    <img src="wordcloud.png" alt="word cloud of terms used in incident report description" style="display: block; margin-left: auto; margin-right: auto; width: 75%;">
+    <p>The word cloud suggests that many of the reported incidents occurred along streets, in or near residences, as well as in parking lots or near businesses, for example. This can immediately give us a good working idea of where incidents might be likely to occur.</p>
     
     <h2>Conclusions</h2>
-    <p>A lot of crimes happen during noon to early afternoon.
-Crimes can happen anywhere, either in public or private places.
-Some areas like 77th Street and Southwest are riskier than other areas.
-Top 3 crimes are stolen vehicle, battery, and burglary.
-There was a big drop in identity theft.
+    <p>Many incidents occur during noon to early afternoon.
+Crime incidents can happen anywhere, either in public or private places.
+Some police jurisdictions, such as 77th Street and Southwest, could be riskier than other areas due to higher frequencies of crime incidents.
+Top three crimes are stolen vehicle, battery, and burglary.
+There was a significant drop in identity theft after 2022.
 Crimes usually happen on the street or in single family dwellings.
-Some future findings and information we want to explore in the future:
-Does gender, age, or race matter?
-Analyze status of crime.
-The amount of time it takes a person to report the crime.
+Some future findings and information we want to explore in the future include whether demographics are correlated to crime incidents in different neighborhoods, as well as delays between incidents occurring and being reported.
 </p>
-  </body>
- 
 
+  <h2>References</h2>
+    <ol>
+      <li><a href="https://catalog.data.gov/dataset/crime-data-from-2020-to-present">Crime Data from 2020 to Present</a></li>
+      <li><a href="https://www.latimes.com/california/story/2023-10-12/violent-crime-is-down-fear-is-up-why-is-la-perceived-as-dangerous" target="_blank">Violent Crime is Down, Fear is Up: Why is LA Perceived as Dangerous?</a></li>
+      <li><a href="https://abc7.com/feature/los-angeles-safety-tracker-crime-stats-how-safe-is-my-neighborhood-zip-code-statistics/12533677/" target="_blank">Los Angeles Safety Tracker: Crime Stats</a></li>
+    </ol>
+  </body>
 </html>
